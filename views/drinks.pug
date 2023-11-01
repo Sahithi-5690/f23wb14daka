@@ -2,3 +2,27 @@ extends layout
 
 block content
   h1= title
+  -
+    let results = [
+      {
+        "drinks_brand": "Coke",
+        "drinks_quantity": "4 Gallons",
+        "drinks_cost": 160
+      },
+      {
+        "drinks_brand": "Pepsi",
+        "drinks_quantity": "3 Gallons",
+        "drinks_cost": 125
+      },
+      {
+        "drinks_brand": "ThumsUp",
+        "drinks_quantity": "2 Gallons",
+        "drinks_cost": 140
+      },                   
+    ]
+  div(class= "container-fluid")
+    div(class = "row")
+      each item,index in results
+        div(class= "col-sm-2") Brand: #{item.drinks_brand}
+        div(class= "col-sm-2") Quantity: #{item.drinks_quantity}
+        div(class= "col-sm-2") Cost: #{item.drinks_cost}
